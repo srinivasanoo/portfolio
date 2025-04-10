@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srinivasan B - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+
+        .skill-icon {
+          width: 48px;
+          height: 48px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          border-radius: 10px;
+        }
+        .react-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/1183/1183672.png'); }
+        .html-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/732/732212.png'); }
+        .css-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/732/732190.png'); }
+        .bootstrap-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/5968/5968672.png'); }
+        .nodejs-icon { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'); }
+        .spring-icon { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg'); }
+        .java-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/226/226777.png'); }
+        .rest-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/10385/10385094.png'); }
+        .mysql-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/919/919836.png'); }
+        .postgresql-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/5968/5968342.png'); }
+        .git-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/4494/4494748.png'); }
+        .github-icon { background-image: url('https://cdn-icons-png.flaticon.com/512/733/733553.png'); }
+        .figma-icon { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg'); }
+
+
+      :root {
+          --dark-blue: #0a0a1a;
+          --medium-blue: #1a1a3a;
+          --light-blue: #3a3a6a;
+          --highlight: #4a78c9;
+          --accent: #ff7e5f;
+      }
+
+      body {
+          background-color: var(--dark-blue);
+          color: white;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-image:
+              radial-gradient(circle at 50% 0%, #ff726f33 0%, transparent 30%),
+              radial-gradient(circle at 80% 80%, #6e40aa22 0%, transparent 30%),
+              radial-gradient(circle at 20% 50%, #00aaff22 0%, transparent 40%);
+          background-attachment: fixed;
+          overflow-x: hidden;
+      }
+
+      .horizon {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 200px;
+          background: linear-gradient(to bottom, #ff726f, #e95e6a, #c44c6f, transparent);
+          opacity: 0.6;
+          z-index: -1;
+      }
+
+      .stars {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+          overflow: hidden;
+      }
+
+      .star {
+          position: absolute;
+          background-color: white;
+          border-radius: 50%;
+      }
+
+      .navbar {
+          background-color: rgba(10, 10, 26, 0.8) !important;
+          backdrop-filter: blur(10px);
+      }
+
+      .navbar-brand {
+          display: flex;
+          align-items: center;
+      }
+
+      .logo-icon {
+          width: 30px;
+          height: 30px;
+          background-color: var(--accent);
+          border-radius: 50%;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .nav-link {
+          color: rgba(255, 255, 255, 0.8) !important;
+          transition: color 0.3s;
+      }
+
+      .nav-link:hover, .nav-link.active {
+          color: var(--accent) !important;
+      }
+
+      .profile-image {
+          background-color: var(--medium-blue);
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+          color: #76c8ff;
+          font-family: monospace;
+          padding: 1.5rem;
+          line-height: 1.5;
+          border: 1px solid #76c8ff33;
+          height: 100%;
+      }
+
+      h1.name {
+          font-size: 2.5rem;
+          color: var(--accent);
+      }
+
+      h2.title {
+          font-size: 1.5rem;
+          color: #e0e0e0;
+      }
+
+      .bio {
+          line-height: 1.6;
+          color: #b0b0b0;
+      }
+
+      .social-links a {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: var(--light-blue);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          text-decoration: none;
+          transition: background-color 0.3s;
+          margin-right: 0.5rem;
+      }
+
+      .social-links a:hover {
+          background-color: var(--accent);
+          transform: translateY(-3px);
+      }
+
+      .section-title {
+          color: white;
+          position: relative;
+      }
+
+      .section-subtitle {
+          color: #b0b0b0;
+      }
+
+      .divider {
+          height: 2px;
+          background: linear-gradient(to right, transparent, var(--highlight), transparent);
+          margin: 3rem 0;
+      }
+
+      .contact-form {
+          background-color: rgba(26, 26, 58, 0.7);
+          border-radius: 10px;
+          backdrop-filter: blur(10px);
+      }
+
+      .form-control {
+          background-color: rgba(10, 10, 26, 0.8);
+          border: 1px solid var(--light-blue);
+          color: white;
+      }
+
+      .form-control:focus {
+          background-color: rgba(15, 15, 40, 0.8);
+          border-color: var(--highlight);
+          color: white;
+          box-shadow: 0 0 0 0.25rem rgba(74, 120, 201, 0.25);
+      }
+
+      .form-control::placeholder {
+          color: #8a8a9a;
+      }
+
+      .btn-primary {
+          background-color: var(--highlight);
+          border-color: var(--highlight);
+      }
+
+      .btn-primary:hover {
+          background-color: var(--accent);
+          border-color: var(--accent);
+      }
+
+      footer {
+          background-color: rgba(10, 10, 26, 0.8);
+      }
+
+      .footer-links a {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: var(--light-blue);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          text-decoration: none;
+          margin: 0 0.5rem;
+      }
+
+      .footer-links a:hover {
+          background-color: var(--accent);
+      }
+
+      .footer-nav a {
+          color: #b0b0b0;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 0.9rem;
+          transition: color 0.3s;
+          margin: 0 1rem;
+      }
+
+      .footer-nav a:hover {
+          color: var(--accent);
+      }
+
+      .copyright {
+          color: #707070;
+          font-size: 0.9rem;
+      }
+
+      /* Custom styles for project cards */
+      .project-card {
+          background-color: rgba(26, 26, 58, 0.7);
+          border-radius: 10px;
+          overflow: hidden;
+          border: 1px solid rgba(74, 120, 201, 0.25);
+          height: 100%;
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .project-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .project-card .card-body {
+          padding: 1.5rem;
+      }
+
+      .project-card .card-title {
+          color: var(--accent);
+          font-weight: 600;
+      }
+
+      .project-card .card-text {
+          color: #b0b0b0;
+      }
+
+      .project-card .badge {
+          background-color: var(--light-blue);
+          margin-right: 0.5rem;
+          margin-bottom: 0.5rem;
+          padding: 0.5rem 0.8rem;
+      }
+
+      .skill-badge {
+          background-color: var(--light-blue);
+          color: white;
+          border-radius: 20px;
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          margin-right: 0.7rem;
+          margin-bottom: 0.7rem;
+          font-size: 0.9rem;
+          transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .skill-badge:hover {
+          background-color: var(--accent);
+          transform: translateY(-3px);
+      }
+
+      .education-card {
+          background-color: rgba(26, 26, 58, 0.7);
+          border-radius: 10px;
+          padding: 1.5rem;
+          margin-bottom: 1.5rem;
+          border-left: 4px solid var(--accent);
+      }
+
+      .education-card h4 {
+          color: white;
+          margin-bottom: 0.5rem;
+      }
+
+      .education-card h5 {
+          color: var(--accent);
+          margin-bottom: 0.5rem;
+          font-size: 1.1rem;
+      }
+
+      .education-card .year {
+          color: #b0b0b0;
+          font-size: 0.9rem;
+          margin-bottom: 0.7rem;
+      }
+
+      .education-card .grade {
+          color: #d0d0d0;
+      }
+
+      @keyframes twinkle {
+          0% { opacity: 0.2; }
+          100% { opacity: 1; }
+      }
+
+      /* Education Section Cards */
+      .education-card {
+        background-color: rgba(26, 26, 58, 0.85);
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-left: 5px solid transparent;
+      }
+
+      .education-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+      }
+
+      .education-card h4 {
+        color: #ffffff;
+        font-size: 1.35rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .education-card h5 {
+        color: var(--accent);
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+        font-weight: 500;
+      }
+
+      .education-card .year {
+        color: #b0b0b0;
+        font-size: 0.95rem;
+        margin-bottom: 0.3rem;
+        font-style: italic;
+      }
+
+      .education-card .grade {
+        color: #d0d0d0;
+        font-weight: 600;
+      }
+
+      /* Section Titles */
+      .section-title {
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .section-subtitle {
+        color: #bbbbbb;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      /* Certification Highlights */
+      #certifications .education-card p {
+        color: #dddddd;
+        font-style: italic;
+        font-size: 0.95rem;
+      }
+
+      /* Professional Training Specific */
+      #training .education-card {
+        border-left: 5px solid var(--highlight);
+      }
+
+      #education .education-card {
+        border-left: 5px solid var(--accent);
+      }
+
+      #certifications .education-card {
+        border-left: 5px solid var(--light-blue);
+      }
+
+      @keyframes pulse {
+0% { box-shadow: 0 0 10px rgba(74, 120, 201, 0.3); }
+50% { box-shadow: 0 0 20px rgba(74, 120, 201, 0.6); }
+100% { box-shadow: 0 0 10px rgba(74, 120, 201, 0.3); }
+
+    </style>
+</head>
+<body>
+<div class="horizon"></div>
+<div class="stars" id="stars"></div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top animate_animated animate_fadeInDown">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <div class="logo-icon">S</div>
+            <span>Srinivasan_Portfolio</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Profile Section -->
+<section class="container py-5 mt-5" id="about">
+    <div class="row align-items-center py-4 animate_animated animate_fadeInUp">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="profile-image mb-4 p-3" style="background-color: #1a1a3a; border-radius: 12px; font-family: 'Courier New', Courier, monospace; color: #76c8ff; box-shadow: inset 0 0 10px rgba(74, 120, 201, 0.3); animation: pulse 4s infinite;">
+                <div style="background-color: #101020; padding: 1rem; border-radius: 8px; border-left: 4px solid #4a78c9;">
+                    <code style="display: block; color: #61dafb;">&gt;&gt;&gt; print("Hello World!")</code>
+                    <code style="display: block; color: #fff;">Hello World!</code>
+                    <code style="display: block; color: #61dafb;">&gt;&gt;&gt; def fullstack_dev():</code>
+                    <code style="display: block; color: #61dafb;">...&nbsp;&nbsp;&nbsp;&nbsp;return "React | Node.js | Spring Boot"</code>
+                    <code style="display: block; color: #61dafb;">&gt;&gt;&gt; fullstack_dev()</code>
+                    <code style="display: block; color: #fff;'">'React | Node.js | Spring Boot'</code>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <h1 class="name animate_animated animate_fadeInRight">Srinivasan B</h1>
+            <h2 class="title mb-3 animate_animated animatefadeInRight animate_delay-1s">Full Stack Web Developer</h2>
+            <p class="bio mb-4 animate_animated animatefadeInRight animate_delay-2s">
+                Full Stack Developer with hands-on experience in building web applications using React, Node.js,
+                and Spring Boot. Completed a Full Stack Web Development course at Tata STRIVE, Bengaluru.
+                Developed real-world projects like Mitra and a crowdfunding donation UI. Eager to build user-
+                centered digital solutions and learn new technologies.
+            </p>
+            <div class="social-links d-flex animate_animated animatefadeIn animate_delay-3s">
+                <a href="https://github.com/srinivasanoo" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/srinivasan-b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:srinivasanb656@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+
+
+
+<section class="container py-4" id="skills">
+    <h2 class="section-title mb-2 text-center">Technical Skills</h2>
+    <p class="section-subtitle mb-4 text-center">My expertise and technologies I work with</p>
+
+    <!-- Front End -->
+    <div class="skill-category mb-5">
+        <h4 class="mb-3 text-center">Front End</h4>
+        <div id="frontendCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-primary">
+                            <div class="skill-icon react-icon mb-2"></div>
+                            <p class="mb-0">React</p>
+                        </div>
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-primary">
+                            <div class="skill-icon html-icon mb-2"></div>
+                            <p class="mb-0">HTML</p>
+                        </div>
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-primary">
+                            <div class="skill-icon css-icon mb-2"></div>
+                            <p class="mb-0">CSS</p>
+                        </div>
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-primary">
+                            <div class="skill-icon bootstrap-icon mb-2"></div>
+                            <p class="mb-0">Bootstrap</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back End -->
+    <div class="skill-category mb-5">
+        <h4 class="mb-3 text-center">Back End</h4>
+        <div id="backendCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-success">
+                            <div class="skill-icon nodejs-icon mb-2"></div>
+                            <p class="mb-0">Node.js</p>
+                        </div>
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-success">
+                            <div class="skill-icon spring-icon mb-2"></div>
+                            <p class="mb-0">Spring Boot</p>
+                        </div>
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-success">
+                            <div class="skill-icon java-icon mb-2"></div>
+                            <p class="mb-0">Java</p>
+                        </div>
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-success">
+                            <div class="skill-icon rest-icon mb-2"></div>
+                            <p class="mb-0">REST APIs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Database -->
+    <div class="skill-category mb-5">
+        <h4 class="mb-3 text-center">Database</h4>
+        <div id="databaseCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-warning">
+                            <div class="skill-icon mysql-icon mb-2"></div>
+                            <p class="mb-0">MySQL</p>
+                        </div>
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-warning">
+                            <div class="skill-icon postgresql-icon mb-2"></div>
+                            <p class="mb-0">PostgreSQL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tools & Others -->
+    <div class="skill-category mb-5">
+        <h4 class="mb-3 text-center">Tools & Others</h4>
+        <div id="toolsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-info">
+                            <div class="skill-icon git-icon mb-2"></div>
+                            <p class="mb-0">Git</p>
+                        </div>
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-info">
+                            <div class="skill-icon github-icon mb-2"></div>
+                            <p class="mb-0">GitHub</p>
+                        </div>
+                        <div class="skill-card text-center bg-dark text-white rounded p-3 h-100 border border-info">
+                            <div class="skill-icon figma-icon mb-2"></div>
+                            <p class="mb-0">Figma</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<div class="divider"></div>
+
+<!-- Projects Section -->
+<section class="container py-4" id="projects">
+    <h2 class="section-title mb-2">Projects</h2>
+    <p class="section-subtitle mb-4">Check out my latest work</p>
+    <div class="row g-4">
+        <!-- Mitra Project -->
+        <div class="col-md-6">
+            <div class="project-card">
+                <div class="card-body">
+                    <h4 class="card-title">Mitra – A Charity Donation Platform</h4>
+                    <div class="mb-3">
+                        <span class="badge">React</span>
+                        <span class="badge">Node.js</span>
+                        <span class="badge">Spring Boot</span>
+                    </div>
+                    <p class="card-text">
+                        Created a web-based platform at Tata STRIVE to support secure donations for old age homes.
+                        Built features like user registration, real-time donation tracking, and a secure payment gateway.
+                        Used React for the frontend, Spring Boot and Node.js for the backend, with Bootstrap for styling.
+                    </p>
+                    <p class="text-muted mt-2">Dec 2024 - Mar 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Website Project -->
+        <div class="col-md-6">
+            <div class="project-card">
+                <div class="card-body">
+                    <h4 class="card-title">Personal Portfolio Website</h4>
+                    <div class="mb-3">
+                        <span class="badge">React</span>
+                        <span class="badge">Bootstrap</span>
+                    </div>
+                    <p class="card-text">
+                        Built a responsive portfolio using React to showcase my skills and projects.
+                        Used components and hooks to create an interactive UI.
+                        Structured into sections like About, Projects, and Contact.
+                    </p>
+                    <p class="text-muted mt-2">Mar 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sid Quick Project -->
+        <div class="col-md-6">
+            <div class="project-card">
+                <div class="card-body">
+                    <h4 class="card-title">Sid Quick – Online Medical Consultancy</h4>
+                    <div class="mb-3">
+                        <span class="badge">Bootstrap</span>
+                        <span class="badge">HTML</span>
+                        <span class="badge">CSS</span>
+                    </div>
+                    <p class="card-text">
+                        Created a medical consultation platform for quick disease identification and doctor search.
+                        Helps users connect with nearby healthcare professionals based on symptoms or needs.
+                        Built to support fast access to online medical assistance and improve healthcare outreach.
+                    </p>
+                    <p class="text-muted mt-2">Dec 2022 - Mar 2023</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vehicle Breakdown Project -->
+        <div class="col-md-6">
+            <div class="project-card">
+                <div class="card-body">
+                    <h4 class="card-title">Intelligent Vehicle Breakdown Assistance Management</h4>
+                    <div class="mb-3">
+                        <span class="badge">Java</span>
+                        <span class="badge">MySQL</span>
+                    </div>
+                    <p class="card-text">
+                        Built a system that allows users to register vehicle issues and request breakdown help.
+                        Connects users with nearby service providers to reduce wait time and improve response.
+                        Focused on enhancing customer experience in emergency roadside situations.
+                    </p>
+                    <p class="text-muted mt-2">Jan 2024 - Mar 2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Education Section -->
+<!-- Education Section -->
+<section class="container py-4" id="education">
+    <h2 class="section-title text-center mb-2">Education</h2>
+    <p class="section-subtitle text-center">My academic journey</p>
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="education-card">
+                <h4>Er.Perumal Manimekali College of Engineering</h4>
+                <h5>B.Tech - Information Technology</h5>
+                <p class="year">2020 - 2024</p>
+                <p class="grade">CGPA: 8.03</p>
+            </div>
+            <div class="education-card">
+                <h4>Islamiah Higher Secondary School</h4>
+                <h5>12th - MPCB</h5>
+                <p class="year">2019 - 2020</p>
+                <p class="grade">Percentage: 67%</p>
+            </div>
+            <div class="education-card">
+                <h4>Islamiah Higher Secondary School</h4>
+                <h5>10th</h5>
+                <p class="year">2017 - 2018</p>
+                <p class="grade">Percentage: 70%</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Training Section -->
+<section class="container py-4" id="training">
+    <h2 class="section-title text-center mb-2">Professional Training</h2>
+    <p class="section-subtitle text-center">Specialized programs and hands-on experience</p>
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="education-card">
+                <h4>Tata STRIVE, Bengaluru</h4>
+                <h5>Full Stack Java Development Cohort</h5>
+                <p class="year">Professional Training</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="container py-4" id="certifications">
+    <h2 class="section-title text-center mb-2">Certifications</h2>
+    <p class="section-subtitle text-center">Courses and certifications completed</p>
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="education-card">
+                <h4>Codecademy</h4>
+                <p>Completed training in: React, Java, JavaScript, SQL, HTML, CSS, Git & GitHub, Spring Boot, UI/UX, and more.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="container py-4" id="contact">
+    <h2 class="section-title mb-2">Contact Me</h2>
+    <p class="section-subtitle mb-4">Let's connect and work together</p>
+
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <div class="contact-form p-4">
+                <h4 class="mb-2">Contact Information</h4>
+                <p class="mb-1">📧 srinivasanb656@gmail.com</p>
+                <p class="mb-1">📞 +91 7339552119</p>
+                <p>📍 Bengaluru, Karnataka</p>
+
+                <hr class="border-top border-secondary my-4">
+
+                <h3 class="mb-3">Send me a message</h3>
+                <p class="text-light mb-4">Have a project in mind or want to explore opportunities? Feel free to reach out!</p>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Your message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="mt-5 py-4">
+    <div class="container">
+        <div class="d-flex justify-content-center mb-3 footer-links">
+            <a href="https://github.com/srinivasanoo" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/srinivasan-b" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:srinivasanb656@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="d-flex justify-content-center mb-4 footer-nav">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="copyright text-center">
+            Copyright © 2025 Srinivasan B. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Create stars
+    const starsContainer = document.getElementById('stars');
+    const starCount = 150;
+
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+
+        // Random position
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+
+        // Random size
+        const size = Math.random() * 2;
+
+        // Random opacity
+        const opacity = Math.random() * 0.8 + 0.2;
+
+        star.style.left = ${x}%;
+        star.style.top = ${y}%;
+        star.style.width = ${size}px;
+        star.style.height = ${size}px;
+        star.style.opacity = opacity;
+
+        starsContainer.appendChild(star);
+    }
+
+    // Add twinkling effect to some stars
+    const stars = document.querySelectorAll('.star');
+    stars.forEach((star, index) => {
+        if (index % 3 === 0) {
+            const animationDuration = Math.random() * 3 + 1;
+            star.style.animation = twinkle ${animationDuration}s infinite alternate;
+        }
+    });
+
+    // Add active class to navbar items on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
